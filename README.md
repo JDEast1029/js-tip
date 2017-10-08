@@ -11,3 +11,18 @@ var b = a.replace(/\+/g," ");   // g表示对整个字符串中符合条件的�
 b =  decodeURIComponent(b);  //对serialize后的内容进行解码
 alert(b); // content=abc + 123 + 456
 ```
+### 骚气的JavaScript
+1. 去掉小数部分
+```text
+parseInt(num)
+~~num
+num >> 0
+num | 0
+```
+2. 判断x是否为整数
+```text
+function isInt(x) {
+  return (X ^ 0) === x
+}
+Math.round(x) === x
+```
