@@ -22,7 +22,25 @@ num | 0
 2. 判断x是否为整数
 ```text
 function isInt(x) {
-  return (X ^ 0) === x
+  return (x ^ 0) === x
 }
-Math.round(x) === x
+return Math.round(x) === x
+return (typeof num === 'number') && (x % 1 === 0)
+(x % 1 === 0)
+//ES6 Number.isInteger(num)
+```
+3. 递归求阶乘
+```text
+function factorial(n) {
+    return (n > 1) ? n * factorial(n-1) : n
+}
+factorial(3) //6
+```
+4. 克隆数组
+```text
+arr.slice(0);
+
+let arr1 = [1,2,3];
+let arr2 = arr1.slice(0);
+console.log(arr1, arr2, arr1 === arr2) //[1,2,3] [1,2,3] false
 ```
