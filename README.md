@@ -44,3 +44,14 @@ let arr1 = [1,2,3];
 let arr2 = arr1.slice(0);
 console.log(arr1, arr2, arr1 === arr2) //[1,2,3] [1,2,3] false
 ```
+5. js替换掉富文本或html中的标签和空白
+```text
+var html = '<div style="color:red">111<span>222</span>&nbsp;&nbsp;333<a>444</a>555</div>';
+html = html.replace(/<\/?.+?>/g, "");
+
+html= html.replace(/&nbsp;/g, " ");
+
+console.log(html);
+
+//结果是111222333444555 
+```
