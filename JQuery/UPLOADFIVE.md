@@ -1,4 +1,4 @@
-#FileType uploadify与uploadifive的对比
+## FileType uploadify与uploadifive的对比
 ```text
 后缀名       MIME名称
 *.3gpp    audio/3gpp, video/3gpp
@@ -49,4 +49,26 @@
 *.xml     text/xml, application/xml    
 *.zip     aplication/zip    
 *.xlsx    application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+```
+## uplodfive  2007版office各种文件在fileType中对应的值
+```text
+以下是部分MIME对应信息
+
+ .docm            application/vnd.ms-word.document.macroEnabled.12
+ .docx            application/vnd.openxmlformats-officedocument.wordprocessingml.document
+ .dotm            application/vnd.ms-word.template.macroEnabled.12
+ .dotx            application/vnd.openxmlformats-officedocument.wordprocessingml.template
+ .potm            application/vnd.ms-powerpoint.template.macroEnabled.12
+ .potx            application/vnd.openxmlformats-officedocument.presentationml.template
+ .ppam            application/vnd.ms-powerpoint.addin.macroEnabled.12
+ .ppsm            application/vnd.ms-powerpoint.slideshow.macroEnabled.12
+ .ppsx            application/vnd.openxmlformats-officedocument.presentationml.slideshow
+ .pptm            application/vnd.ms-powerpoint.presentation.macroEnabled.12
+ .pptx            application/vnd.openxmlformats-officedocument.presentationml.presentation
+ .xlam            application/vnd.ms-excel.addin.macroEnabled.12
+ .xlsb            application/vnd.ms-excel.sheet.binary.macroEnabled.12
+ .xlsm            application/vnd.ms-excel.sheet.macroEnabled.12
+ .xlsx            application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+ .xltm            application/vnd.ms-excel.template.macroEnabled.12
+ .xltx            application/vnd.openxmlformats-officedocument.spreadsheetml.template
 ```
