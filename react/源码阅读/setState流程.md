@@ -190,6 +190,15 @@ function runBatchedUpdates(transaction) {
 runBatchedUpdates主要是：通过执行performUpdateIfNecessary()来刷新组件和依次执行callback方法。
 * performUpdateIfNecessary
 ```js
+receiveComponent: function (nextElement, transaction, nextContext) {
+    var prevElement = this._currentElement;
+    var prevContext = this._context;
+
+    this._pendingElement = null;
+
+    this.updateComponent(transaction, prevElement, nextElement, prevContext, nextContext);
+  },
+
 performUpdateIfNecessary: function (transaction) {
   if (this._pendingElement != null) {
     ReactReconciler.receiveComponent(this, this._pendingElement, transaction, this._context);
@@ -201,6 +210,7 @@ performUpdateIfNecessary: function (transaction) {
   }
 },
 
+// ReactReconciler.js
 receiveComponent: function (internalInstance, nextElement, transaction, context) {
   var prevElement = internalInstance._currentElement;
 
