@@ -10,9 +10,7 @@ b. 运行：执行perform()传入的method。
 c. 结束：更新isBatchingUpdates为false，并执行FLUSH_BATCHED_UPDATES这个wrapper中的close方法。
 ```
 5. FLUSH_BATCHED_UPDATES在close阶段，会循环遍历所有的dirtyComponents，调用updateComponent刷新组件，并执行它的pendingCallbacks, 也就是setState中设置的callback。
-```
-![setState流程简化](./setState.png)
-```
+![setState流程简化](setState.png)
 ## 将要更新的state放入队列中
 ```js
 // ReactCompnent.js
