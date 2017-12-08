@@ -10,6 +10,9 @@ b. 运行：执行perform()传入的method。
 c. 结束：更新isBatchingUpdates为false，并执行FLUSH_BATCHED_UPDATES这个wrapper中的close方法。
 ```
 5. FLUSH_BATCHED_UPDATES在close阶段，会循环遍历所有的dirtyComponents，调用updateComponent刷新组件，并执行它的pendingCallbacks, 也就是setState中设置的callback。
+```
+![setState流程简化](./setState.png)
+```
 ## 将要更新的state放入队列中
 ```js
 // ReactCompnent.js
@@ -84,6 +87,9 @@ var ReactDefaultBatchingStrategy = {
 };
 ```
 ## 事务 Transaction
+事务就是将需要执行的方法使用 wrapper 封装起来，再通过事务提供的  perform 方法执行。
+而在  perform 之前，先执行所有 wrapper 中的  initialize 方法，执行完  perform 之后（即执行
+method 方法后）再执行所有的  close 方法。一组  initialize 及  close 方法称为一个 wrapper。
 ```js
 // Transaction.js
 perform: function (method, scope, a, b, c, d, e, f) {
@@ -299,3 +305,8 @@ if (inst.componentWillMount) {
 在React库的控制下调用handleClick()之前会调用一次batchedUpdates()来发起一次事务，所以在handleClick()中更新的state会存入到_pendingStateQueue中，等待updateComponent去执行，而setTimeout和addEventListener并不在React库的控制下，所以会立即更新。
 ```
 可以通过console.trace() 来查看调用栈。
+
+# 参考内容
+ + [React中setState源码分析](https://zhuanlan.zhihu.com/p/31142556)
+ + [React--深入挖掘setState](https://zhuanlan.zhihu.com/p/30326857)
+ + [React源码分析4 — setState机制](https://zhuanlan.zhihu.com/p/25882602)
