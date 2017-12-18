@@ -56,6 +56,8 @@ console.log(html);
 //结果是111222333444555 
 ```
 5. 获取当月天数
+getDate() 方法可返回月份的某一天。取值范围是1~31
+如果是0的话，就返回最后一天。这样就能取得当月的天数了
 ```js
 var  day = new Date(2016,2,0);
 var daycount = day.getDate();
