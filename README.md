@@ -55,3 +55,9 @@ console.log(html);
 
 //结果是111222333444555 
 ```
+5. 获取当月天数
+```js
+var  day = new Date(2016,2,0);
+var daycount = day.getDate();
+alert(daycount);//29
+```
